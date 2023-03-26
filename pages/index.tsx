@@ -8,10 +8,10 @@ import Jumbo from "../components/Jumbo";
 import ProductSection from "../components/ProductSection";
 import styled from "styled-components";
 import { useEffect, useState } from "react";
-import { DATA_ENDPOINT } from "../constants/url";
-import { DataApiResponseType } from "../types";
+import { Product } from "../types";
 import ServicesSection from "../components/ServicesSection";
 import Footer from "../components/Footer";
+import { getAllProducts } from "../utils";
 
 const openSans = Open_Sans({ subsets: ["latin"], variable: "--open-sans" });
 
@@ -20,14 +20,13 @@ const MainContainer = styled(Container)`
 `;
 
 export default function Home() {
-    const [data, setData] = useState<DataApiResponseType>({
-        products: [],
-        services: [],
-    });
+    const [products, setProducts] = useState<Product[]>([]);
     useEffect(() => {
-        fetch(DATA_ENDPOINT)
-            .then((response) => response.json())
-            .then(setData);
+        const fetchData = async () => {
+            const data = await getAllProducts();
+            setProducts(data);
+        };
+        fetchData();
     }, []);
 
     return (
@@ -52,12 +51,12 @@ export default function Home() {
             <main className={openSans.variable}>
                 <Jumbo />
                 <MainContainer>
-                    {!!data.products.length && (
-                        <ProductSection products={data.products} />
+                    {!!products.length && (
+                        <ProductSection products={products} />
                     )}
-                    {!!data.services.length && (
+                    {/* {!!data.services.length && (
                         <ServicesSection services={data.services} />
-                    )}
+                    )} */}
                 </MainContainer>
                 <footer className={openSans.variable}>
                     <Footer />

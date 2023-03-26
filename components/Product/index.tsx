@@ -1,7 +1,6 @@
 import styled from "styled-components";
-import phone from "../../assets/phone.png";
-import Button from "../styled/Button.styled";
 import type { Product as ProductType } from "../../types.d";
+import { storeRootUrl } from "../../constants/url";
 
 const ProductWrapper = styled.div`
     width: 200px;
@@ -73,13 +72,13 @@ const Product: React.FC<{ product: ProductType }> = ({ product }) => {
     return (
         <ProductWrapper>
             <ImageWrapper>
-                <ProductImage src={product.imageUrl} alt="product" />
+                <ProductImage src={product.display_image} alt="product" />
             </ImageWrapper>
             <div className="product_details">
                 <span className="product_name">{product.name}</span>
-                <span className="discounted_price">{`₦${product.discounted_price}`}</span>
+                <span className="discounted_price">{`${product.currency} ${product.price}`}</span>
                 <span className="undiscounted_price">
-                    <s>{`₦${product.undiscounted_price}`}</s>
+                    <s>{`${product.currency} ${product.meta.discount.original_price}`}</s>
                 </span>
             </div>
             <div className="button_group">
@@ -90,7 +89,9 @@ const Product: React.FC<{ product: ProductType }> = ({ product }) => {
                     color="rgba(0, 0, 0, 1)"
                     target="_blank"
                     rel="noopener noreferrer"
-                    href={`https://api.whatsapp.com/send?phone=8145055409&text=Hi, Dr Rex Gadget, I want to buy ${product.name}`}
+                    href={`https://api.whatsapp.com/send?phone=8145055409&text=Hi, Dr Rex Gadget, I want to buy ${
+                        storeRootUrl + product.slug
+                    }`}
                 >
                     <InlineFlex>
                         <svg
@@ -115,7 +116,7 @@ const Product: React.FC<{ product: ProductType }> = ({ product }) => {
                     color="rgba(0, 0, 0, 1)"
                     target="_blank"
                     rel="noopener noreferrer"
-                    href={product.store_link}
+                    href={storeRootUrl + product.slug}
                 >
                     View Product
                 </LinkButton>
