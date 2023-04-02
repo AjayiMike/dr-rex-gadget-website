@@ -89,7 +89,7 @@ const Product: React.FC<{ product: ProductType }> = ({ product }) => {
                     color="rgba(0, 0, 0, 1)"
                     target="_blank"
                     rel="noopener noreferrer"
-                    href={`https://api.whatsapp.com/send?phone=8145055409&text=Hi, Dr Rex Gadget, I want to buy ${
+                    href={`https://api.whatsapp.com/send?phone=8145055406&text=Hi, DrRex Gadget, I'm interested in this product ${
                         storeRootUrl + product.slug
                     }`}
                 >

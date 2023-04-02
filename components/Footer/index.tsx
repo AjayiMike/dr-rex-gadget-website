@@ -35,7 +35,7 @@ const Socials = styled.div`
 
 const Footer = () => {
     return (
-        <StyledFooter>
+        <StyledFooter id="footer_section">
             <Section>
                 <h3 className="section_heading">About Us</h3>
                 <p>
@@ -90,7 +90,7 @@ const Footer = () => {
                         </svg>
                     </a>
                     <a
-                        href="https://api.whatsapp.com/send?phone=8145055409&text=Hi,%20Dr%20Rex%20Gadget%20I%20want%20to%20make%20an%20enquiry"
+                        href="https://wa.link/sd4r60"
                         target="_blank"
                         rel="noopener noreferrer"
                     >

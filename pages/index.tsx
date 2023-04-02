@@ -9,7 +9,6 @@ import ProductSection from "../components/ProductSection";
 import styled from "styled-components";
 import { useEffect, useState } from "react";
 import { Product } from "../types";
-import ServicesSection from "../components/ServicesSection";
 import Footer from "../components/Footer";
 import { getAllProducts } from "../utils";
 
@@ -54,9 +53,6 @@ export default function Home() {
                     {!!products.length && (
                         <ProductSection products={products} />
                     )}
-                    {/* {!!data.services.length && (
-                        <ServicesSection services={data.services} />
-                    )} */}
                 </MainContainer>
                 <footer className={openSans.variable}>
                     <Footer />

@@ -1,12 +1,5 @@
 import styled from "styled-components";
 import type { Product as ProductType } from "../../types.d";
-import {
-    CarouselProvider,
-    Slider,
-    Slide,
-    ButtonBack,
-    ButtonNext,
-} from "pure-react-carousel";
 import { useMediaQuery } from "react-responsive";
 import { useEffect, useState } from "react";
 import Product from "../Product";
@@ -30,6 +23,10 @@ const ProductSectionWrapper = styled.section`
         background: #ffffff;
         box-shadow: 0px 1px 3px rgba(34, 40, 40, 0.25);
         padding: 1rem;
+
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        grid-gap: 20px;
     }
 `;
 
@@ -51,27 +48,9 @@ const ProductSection: React.FC<{ products: ProductType[] }> = ({
         <ProductSectionWrapper id="product_section">
             <h2 className="section_heading">Products</h2>
             <div className="section_body">
-                <CarouselProvider
-                    naturalSlideWidth={200}
-                    naturalSlideHeight={250}
-                    totalSlides={products.length}
-                    visibleSlides={slideCount}
-                    isPlaying={true}
-                    interval={5000}
-                    step={1}
-                    playDirection="forward"
-                    orientation="horizontal"
-                    infinite={true}
-                    isIntrinsicHeight={true}
-                >
-                    <Slider>
-                        {products.map((product: ProductType, index: number) => (
-                            <Slide key={index} index={index}>
-                                <Product product={product} />
-                            </Slide>
-                        ))}
-                    </Slider>
-                </CarouselProvider>
+                {products.map((product: ProductType, index: number) => (
+                    <Product key={index} product={product} />
+                ))}
             </div>
         </ProductSectionWrapper>
     );

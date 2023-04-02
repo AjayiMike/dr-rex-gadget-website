@@ -2,7 +2,7 @@ import React from "react";
 import styled, { useTheme } from "styled-components";
 import { Container } from "../styled/Container.styled";
 import iphone from "../../assets/jumbo-iphone.png";
-import Button from "../styled/Button.styled";
+import { storeRootUrl } from "../../constants/url";
 
 const JumboWrapper = styled.div`
     display: block;
@@ -62,12 +62,16 @@ const Image = styled.img`
     }
 `;
 
-const ButtonWrapepr = styled.div`
-    width: 100%;
-    display: flex;
-    justify-content: center;
-    margin-top: 1rem;
+const ButtonLink = styled.a`
+    background-color: ${(props) => props.theme.colors.blue1};
+    color: ${(props) => props.theme.colors.black2};
+    border-radius: 4px;
+    padding: .5rem 1.2rem;
+    font-size: 1 rem
     font-family: var(--open-sans);
+    cursor: pointer;
+    white-space: nowrap;
+    text-decoration: none;
 `;
 const Jumbo = () => {
     const theme = useTheme();
@@ -81,14 +85,13 @@ const Jumbo = () => {
                         QUALITY PRODUCTS AT THE BEST PRICES GET UP TO{" "}
                         <BolderText>20% OFF</BolderText>
                     </BiggerText>
-                    {/* <ButtonWrapepr> */}
-                    <Button
-                        bgColor={theme.colors.blue1}
-                        color={theme.colors.black2}
+                    <ButtonLink
+                        href={storeRootUrl}
+                        target="_blank"
+                        rel="noopener noreferrer"
                     >
                         Shop now
-                    </Button>
-                    {/* </ButtonWrapepr> */}
+                    </ButtonLink>
                 </JUboTextSection>
             </JumboWrapper>
         </Container>

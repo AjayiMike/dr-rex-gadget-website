@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import { storeRootUrl } from "../../constants/url";
 
 const NavWrapper = styled.nav`
     width: 100%;
@@ -35,18 +36,9 @@ const NavBar = () => {
                 <li>
                     <StyledLink href="#product_section">Products</StyledLink>
                 </li>
-                {/* <li>
-                    <StyledLink
-                        href="https://example.com"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                    >
-                        Flash Sales
-                    </StyledLink>
-                </li> */}
                 <li>
                     <StyledLink
-                        href="https://flutterwave.com/store/drrexenterprise"
+                        href={storeRootUrl}
                         target="_blank"
                         rel="noopener noreferrer"
                     >
@@ -54,22 +46,11 @@ const NavBar = () => {
                     </StyledLink>
                 </li>
                 <li>
-                    <StyledLink href="#services_section">
-                        Laundry services
-                    </StyledLink>
+                    <StyledLink href="#footer_section">About Us</StyledLink>
                 </li>
                 <li>
                     <StyledLink
-                        href="https://example.com"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                    >
-                        About Us
-                    </StyledLink>
-                </li>
-                <li>
-                    <StyledLink
-                        href="https://api.whatsapp.com/send?phone=8145055409&text=Hi,%20Dr%20Rex%20Gadget%20I%20want%20to%20make%20an%20enquiry"
+                        href="https://wa.link/sd4r60"
                         target="_blank"
                         rel="noopener noreferrer"
                     >
