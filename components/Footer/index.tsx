@@ -40,9 +40,9 @@ const Footer = () => {
                 <h3 className="section_heading">About Us</h3>
                 <p>
                     Dr Rex gadget deals with all kinds of phones, laptops, phone
-                    accessories, laundry services and others. we aim at
-                    delivering the best product to all our esteem customer and
-                    making sure their satisfaction is our major priority.
+                    accessories and others. we aim at delivering the best
+                    product to all our esteem customer and making sure their
+                    satisfaction is our major priority.
                 </p>
             </Section>
             <Section>

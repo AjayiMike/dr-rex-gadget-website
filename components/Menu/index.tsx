@@ -109,11 +109,6 @@ const AppMenu = () => {
                         </StyledLink>
                     </Menu.Item>
                     <Menu.Item>
-                        <StyledLink href="#services_section">
-                            Laundry services
-                        </StyledLink>
-                    </Menu.Item>
-                    <Menu.Item>
                         <StyledLink
                             href="https://example.com"
                             target="_blank"

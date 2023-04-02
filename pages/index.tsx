@@ -32,10 +32,7 @@ export default function Home() {
         <>
             <Head>
                 <title>Dr Rex Gadgets</title>
-                <meta
-                    name="description"
-                    content="New and Uk Used Phones + laudry services"
-                />
+                <meta name="description" content="New and Uk Used Phones" />
                 <meta
                     name="viewport"
                     content="width=device-width, initial-scale=1"
