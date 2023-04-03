@@ -1,6 +1,7 @@
 import { Menu, Transition } from "@headlessui/react";
 import styled from "styled-components";
 import { Menu as MenuIcon } from "react-feather";
+import { storeRootUrl } from "../../constants/url";
 
 const MenuElement = styled.div`
     position: relative;
@@ -90,18 +91,9 @@ const AppMenu = () => {
                             Products
                         </StyledLink>
                     </Menu.Item>
-                    {/* <Menu.Item>
-                        <StyledLink
-                            href="https://example.com"
-                            target="_blank"
-                            rel="noopener noreferrer"
-                        >
-                            Flash Sales
-                        </StyledLink>
-                    </Menu.Item> */}
                     <Menu.Item>
                         <StyledLink
-                            href="https://flutterwave.com/store/drrexenterprise"
+                            href={storeRootUrl}
                             target="_blank"
                             rel="noopener noreferrer"
                         >
